@@ -1,4 +1,4 @@
-package com.eisgroup.test.service.domain;
+package com.eisgroup.test.save.domain;
 
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-package com.eisgroup.test.service;
+package com.eisgroup.test.save;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

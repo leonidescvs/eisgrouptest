@@ -1,11 +1,17 @@
-package com.eisgroup.test.service.listener;
+package com.eisgroup.test.save.listener;
 
+import com.eisgroup.test.save.domain.MessageJson;
+import com.eisgroup.test.save.domain.Message;
+import com.eisgroup.test.save.repository.CreateMessageService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.util.UUID;
 
 @Service
 public class CreateMessageListener {
@@ -23,7 +29,7 @@ public class CreateMessageListener {
 
         UUID uuid = createMessageService.execute(Message
                 .builder()
-                .message(messageJson.getMessage())
+                .message(messageJson.getContent())
                 .build()
         );
 
