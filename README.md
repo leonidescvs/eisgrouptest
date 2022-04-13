@@ -11,15 +11,14 @@ after, by Conduktor application on command line create the topics: requesttopic2
 For CASSANDRA
 docker-compose -f docker-cassandra.yml up --> to crate the Cassandra DB
 After to up the Cassandra , execute the commands:
+
 docker exec -it #ID /bin/bash
+
 cqlsh -u cassandra -p cassandra
+
 CREATE KEYSPACE IF NOT EXISTS message_keyspace WITH REPLICATION = {'class':'NetworkTopologyStrategy','datacenter1':3};
 
 use customer_keyspace;
+
 CREATE TABLE Message (id UUID PRIMARY KEY, message text);
-
-
-
-eisgrouptest-api: microservice responsible to process REST request
-eisgroup-test-save: microservice responsible to save in Cassandra DB
 
